@@ -1,0 +1,17 @@
+@import "../../styles/shared.scss";
+
+$sidebar-hover-color: #ebebeb;
+.ui.menu.fixed.side-nav {
+  /* ... */
+  margin-top: $header-nav-height;
+  padding-bottom: $header-nav-height;
+  /*...*/
+}
+
+.ui.menu.top-menu {
+  border: none;
+  .logo {
+    width: $sidebar-left-width;
+  }
+  /* ... */
+}
