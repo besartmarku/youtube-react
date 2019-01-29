@@ -1,0 +1,22 @@
+.ui.menu.top-menu {
+  border: none; /*Remove Semantic UI's bottom border*/
+  .logo {
+    width: 17rem;
+  }
+  .header-icon {
+    color: #a0a0a0;
+  }
+  .nav-container {
+    flex-grow: 1;
+    padding: 0;
+
+    .search-input {
+      padding-left: 0;
+      width: 33%;
+
+      form {
+        width: 100%;
+      }
+    }
+  }
+}
