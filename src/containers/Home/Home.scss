@@ -2,7 +2,7 @@
 
 .home {
   margin-top: $header-nav-height;
-  margin-left: 10rem;
+  margin-left: $sidebar-left-width;
   display: grid;
   grid: auto / auto;
   justify-content: space-around;
