@@ -3,6 +3,19 @@
 .video-preview {
   display: grid;
   grid: 118px auto / 210px;
+
+  /*
+     override grid settings to make VideoPreview horizontal.
+     Vertical is default
+  */
+  &.horizontal {
+    grid: auto / 210px auto;
+    grid-column-gap: 4px;
+    .video-info {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+    }
+  }
 }
 
 .image-container {
@@ -11,9 +24,6 @@
   grid-column: 1 / 2;
 
   /* Video duration label at bottom right */
-  .time-label {
-    /* ... */
-  }
 }
 /* ... */
 .time-label {
