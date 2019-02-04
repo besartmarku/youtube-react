@@ -1,8 +1,11 @@
+@import "../../styles/shared.scss";
+
 .video-info-box {
   display: grid;
   grid: auto auto / 58px auto max-content;
   align-items: center;
   grid-row-gap: 16px;
+  grid: auto auto / calc(#{$avatar-diameter} + #{$avatar-margin}) auto max-content;
 
   .channel-image {
     grid-row: 1 / 2;
