@@ -10,6 +10,9 @@ export class Comments extends React.Component {
         <CommentsHeader amountComments={this.props.amountComments} />
         <AddComment />
         <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
       </div>
     );
   }

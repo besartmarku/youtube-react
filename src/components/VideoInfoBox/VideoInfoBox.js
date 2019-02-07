@@ -47,14 +47,12 @@ export class VideoInfoBox extends React.Component {
             <Button compact>Show More</Button>
           </div>
         </div>
-        <div className="video-description">
-          <div className={descriptionTextClass}>
-            TSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-          </div>
+        {/* <div className="video-description">
+          <div className={descriptionTextClass} />
           <Button compact onClick={this.onToggleCollapseButtonClick}>
             {buttonTitle}
           </Button>
-        </div>
+        </div> */}
       </div>
     );
   }
