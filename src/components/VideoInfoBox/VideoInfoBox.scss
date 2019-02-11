@@ -2,14 +2,15 @@
 
 .video-info-box {
   display: grid;
-  grid: auto auto / 58px auto max-content;
+  grid: auto auto / calc(#{$avatar-diameter} + #{$avatar-margin}) auto max-content;
   align-items: center;
   grid-row-gap: 16px;
-  grid: auto auto / calc(#{$avatar-diameter} + #{$avatar-margin}) auto max-content;
 
   .channel-image {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
+    width: $avatar-diameter;
+    height: $avatar-diameter;
   }
 
   .video-info {
@@ -39,13 +40,14 @@
     button {
       margin: 8px 0;
     }
+
     p {
-      line-height: 1.4rem;
+      line-height: 1.8rem;
       margin-bottom: 0;
     }
 
     .collapsed {
-      max-height: 2.8rem;
+      max-height: 3.6rem;
       overflow-y: hidden;
     }
 
