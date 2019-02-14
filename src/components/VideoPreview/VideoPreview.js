@@ -2,22 +2,33 @@ import React from "react";
 import { Image } from "semantic-ui-react";
 import "./VideoPreview.scss";
 
-class VideoPreview extends React.Component {
+export class VideoPreview extends React.Component {
   render() {
+    const { video } = this.props;
+    if (!video) {
+      return <div />;
+    }
+
+    const horizontal = this.props.horizontal ? "horizontal" : null;
     return (
-      <div className="video-preview">
+      <div className={["video-preview", horizontal].join(" ")}>
         <div className="image-container">
-          <Image src="http://via.placeholder.com/210x118" />
+          <Image src={video.snippet.thumbnails.medium.url} />
           <div className="time-label">
-            <span>05:22</span>
+            <span>{video.contentDetails.duration}</span>
           </div>
         </div>
+
         <div className="video-info">
-          <div className="semi-bold show-max-two-lines">Video title</div>
+          <div className="semi-bold show-max-two-lines">
+            {video.snippet.title}
+          </div>
           <div className="video-preview-metadata-container">
-            <div className="channel-title">Channel title</div>
+            <div className="channel-title">{video.snippet.channelTitle}</div>
             <div>
-              <span>2.1M views • 2 days ago</span>
+              <span>
+                {video.statistics.viewCount} views • {video.snippet.publishedAt}
+              </span>
             </div>
           </div>
         </div>
