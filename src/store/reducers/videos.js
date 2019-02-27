@@ -148,3 +148,17 @@ export const getVideosByCategory = createSelector(
     );
   }
 );
+
+export const videoCategoriesLoaded = createSelector(
+  state => state.videos.categories,
+  categories => {
+    return Object.keys(categories || {}).length !== 0;
+  }
+);
+
+export const videosByCategoryLoaded = createSelector(
+  state => state.videos.byCategory,
+  videosByCategory => {
+    return Object.keys(videosByCategory || {}).length;
+  }
+);
