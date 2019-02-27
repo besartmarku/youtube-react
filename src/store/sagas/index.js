@@ -1,7 +1,7 @@
 import { all, call, put, fork } from "redux-saga/effects";
-import { watchMostPopularVideos } from "./video";
+import { watchMostPopularVideos, watchVideoCategories } from "./video";
 export default function*() {
-  yield all([fork(watchMostPopularVideos)]);
+  yield all([fork(watchMostPopularVideos), fork(watchVideoCategories)]);
 }
 
 export function* fetchEntity(request, entity, ...args) {

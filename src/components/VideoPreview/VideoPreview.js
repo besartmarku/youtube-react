@@ -40,11 +40,6 @@ export class VideoPreview extends React.Component {
             <div>
               <span>{viewAndTimeString}</span>
             </div>
-            <div>
-              {/* <span>
-                {video.statistics.viewCount} views • {video.snippet.publishedAt}
-              </span> */}
-            </div>
           </div>
         </div>
       </div>

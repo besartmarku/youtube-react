@@ -1,8 +1,18 @@
-import { call, fork, take } from "redux-saga/effects";
+import { call, fork, take, takeEvery } from "redux-saga/effects";
 import * as api from "../api/youtube-api";
 import * as videoActions from "../actions/video";
 import { REQUEST } from "../actions";
 import { fetchEntity } from "./index";
+
+export const fetchVideoCategories = fetchEntity.bind(
+  null,
+  api.buildVideoCategoriesRequest,
+  videoActions.categories
+);
+
+export function* watchVideoCategories() {
+  yield takeEvery(videoActions.VIDEO_CATEGORIES[REQUEST], fetchVideoCategories);
+}
 
 export function* watchMostPopularVideos() {
   while (true) {
