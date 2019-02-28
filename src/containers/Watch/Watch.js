@@ -8,17 +8,20 @@ import { connect } from "react-redux";
 import { getYoutubeLibraryLoaded } from "../../store/reducers/api";
 
 import WatchContent from "./WatchContent/WatchContent";
+import { getChannelId } from "../../store/reducers/videos";
+import { getSearchParam } from "../../services/url";
 
 export class Watch extends React.Component {
   getVideoId() {
-    const searchParams = new URLSearchParams(this.props.location.search);
-    return searchParams.get("v");
+    return getSearchParam(this.props.location, "v");
   }
 
   render() {
     const videoId = this.getVideoId();
     {
-      return <WatchContent videoId={videoId} />;
+      return (
+        <WatchContent videoId={videoId} channelId={this.props.channelId} />
+      );
     }
   }
 
@@ -43,9 +46,10 @@ export class Watch extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, props) {
   return {
-    youtubeLibraryLoaded: getYoutubeLibraryLoaded(state)
+    youtubeLibraryLoaded: getYoutubeLibraryLoaded(state),
+    channelId: getChannelId(state, props.location, "v")
   };
 }
 

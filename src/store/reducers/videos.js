@@ -10,7 +10,7 @@ import {
   VIDEO_LIST_RESPONSE
 } from "../api/youtube-api-response-types";
 import { VIDEO_DETAILS, WATCH_DETAILS } from "../actions/watch";
-// import { getSearchParam } from "../../services/url";
+import { getSearchParam } from "../../services/url";
 
 export const initialState = {
   byId: {},
@@ -282,3 +282,12 @@ export const getMostPopularVideosNextPageToken = createSelector(
     return mostPopular.nextPageToken;
   }
 );
+
+export const getChannelId = (state, location, name) => {
+  const videoId = getSearchParam(location, name);
+  const video = state.videos.byId[videoId];
+  if (video) {
+    return video.snippet.channelId;
+  }
+  return null;
+};

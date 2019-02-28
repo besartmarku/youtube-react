@@ -130,3 +130,18 @@ export function buildVideoCategoriesRequest() {
     null
   );
 }
+
+//Youtube channels request
+export function buildChannelRequest(channelId) {
+  return buildApiRequest(
+    "GET",
+    "/youtube/v3/channels",
+    {
+      part: "snippet,statistics",
+      id: channelId,
+      fields:
+        "kind,items(id,snippet(description,thumbnails/medium,title),statistics/subscriberCount)"
+    },
+    null
+  );
+}
