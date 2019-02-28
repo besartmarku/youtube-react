@@ -6,7 +6,7 @@ import {
   getMostPopularVideos,
   getVideosByCategory
 } from "../../../store/reducers/videos";
-import { getVideoCategoryIds } from "../../../store/reducers/videos";
+// import { getVideoCategoryIds } from "../../../store/reducers/videos";
 
 import { InfiniteScroll } from "../../../components/InfiniteScroll/InfiniteScroll";
 

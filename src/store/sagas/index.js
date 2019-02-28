@@ -4,11 +4,13 @@ import {
   watchMostPopularVideosByCategory,
   watchVideoCategories
 } from "./video";
+import { watchWatchDetails } from "./watch";
 export default function*() {
   yield all([
     fork(watchMostPopularVideos),
     fork(watchVideoCategories),
-    fork(watchMostPopularVideosByCategory)
+    fork(watchMostPopularVideosByCategory),
+    fork(watchWatchDetails)
   ]);
 }
 
