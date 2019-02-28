@@ -7,13 +7,19 @@ import { RelatedVideos } from "../../../components/RelatedVideos/RelatedVideos";
 import "./WatchContent.scss";
 import { connect } from "react-redux";
 import { getRelatedVideos, getVideoById } from "../../../store/reducers/videos";
+import { getChannel } from "../../../store/reducers/channels";
+
 class WatchContent extends React.Component {
   render() {
     return (
       <div className="watch-grid">
         <Video className="video" id={this.props.videoId} />
         <VideoMetadata video={this.props.video} />
-        <VideoInfoBox className="video-info-box" video={this.props.video} />
+        <VideoInfoBox
+          className="video-info-box"
+          video={this.props.video}
+          channel={this.props.channel}
+        />
         <Comments amountComments={112499} />
         <RelatedVideos
           className="related-videos"
@@ -25,10 +31,10 @@ class WatchContent extends React.Component {
 }
 
 function mapStateToProps(state, props) {
-  console.log(state);
   return {
     relatedVideos: getRelatedVideos(state, props.videoId),
-    video: getVideoById(state, props.videoId)
+    video: getVideoById(state, props.videoId),
+    channel: getChannel(state, props.channelId)
   };
 }
 export default connect(
