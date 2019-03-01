@@ -258,16 +258,6 @@ export const getRelatedVideos = createSelector(
   }
 );
 
-export const getAmountComments = createSelector(
-  getVideoById,
-  video => {
-    if (video) {
-      return video.statistics.commentCount;
-    }
-    return 0;
-  }
-);
-
 export const allMostPopularVideosLoaded = createSelector(
   [getMostPopular],
   mostPopular => {
@@ -291,3 +281,14 @@ export const getChannelId = (state, location, name) => {
   }
   return null;
 };
+
+//Get total amount of comments per video
+export const getAmountComments = createSelector(
+  getVideoById,
+  video => {
+    if (video) {
+      return video.statistics.commentCount;
+    }
+    return 0;
+  }
+);
