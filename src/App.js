@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { youtubeLibraryLoaded } from "./store/actions/api";
 import { Route, Switch, withRouter } from "react-router-dom";
 
-const API_KEY = "AIzaSyDZLlRJIJC0HQRBWvXZG5z0zmi8EPoepaQ";
+const API_KEY = "AIzaSyARCiQqgb76RWK6-fHVdGT2XzhMgrMnMYg";
 
 class App extends Component {
   render() {

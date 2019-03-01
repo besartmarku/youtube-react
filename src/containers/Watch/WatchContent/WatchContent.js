@@ -47,7 +47,7 @@ class WatchContent extends React.Component {
 }
 function mapStateToProps(state, props) {
   return {
-    video: getVideoById(state, props),
+    video: getVideoById(state, props.videoId),
     relatedVideos: getRelatedVideos(state, props.videoId),
     comments: getCommentsForVideo(state, props.videoId),
     channel: getChannel(state, props.channelId),

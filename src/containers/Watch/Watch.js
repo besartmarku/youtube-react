@@ -1,18 +1,14 @@
 import React from "react";
-import "./Watch.scss";
-
-import * as commentActions from "../../store/actions/comment";
-
 import { bindActionCreators } from "redux";
 import * as watchActions from "../../store/actions/watch";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getYoutubeLibraryLoaded } from "../../store/reducers/api";
-
 import WatchContent from "./WatchContent/WatchContent";
+import { getSearchParam } from "../../services/url";
 import { getChannelId } from "../../store/reducers/videos";
 import { getCommentNextPageToken } from "../../store/reducers/comment";
-import { getSearchParam } from "../../services/url";
+import * as commentActions from "../../store/actions/comment";
 
 export class Watch extends React.Component {
   render() {
@@ -39,6 +35,10 @@ export class Watch extends React.Component {
     }
   }
 
+  getVideoId() {
+    return getSearchParam(this.props.location, "v");
+  }
+
   fetchWatchContent() {
     const videoId = this.getVideoId();
     if (!videoId) {
@@ -55,9 +55,6 @@ export class Watch extends React.Component {
       );
     }
   };
-  getVideoId() {
-    return getSearchParam(this.props.location, "v");
-  }
 }
 
 function mapStateToProps(state, props) {
