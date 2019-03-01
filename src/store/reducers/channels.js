@@ -20,7 +20,6 @@ export default function(state = initialState, action) {
       return state;
   }
 }
-
 function reduceVideoDetails(responses, prevState) {
   const channelResponse = responses.find(
     response => response.result.kind === CHANNEL_LIST_RESPONSE

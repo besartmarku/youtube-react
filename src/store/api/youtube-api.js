@@ -145,3 +145,17 @@ export function buildChannelRequest(channelId) {
     null
   );
 }
+
+//Youtube comments request
+export function buildCommentThreadRequest(videoId, nextPageToken) {
+  return buildApiRequest(
+    "GET",
+    "/youtube/v3/commentThreads",
+    {
+      part: "id,snippet",
+      pageToken: nextPageToken,
+      videoId
+    },
+    null
+  );
+}
