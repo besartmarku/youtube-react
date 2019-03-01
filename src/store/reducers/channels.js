@@ -1,8 +1,8 @@
 import { VIDEO_DETAILS, WATCH_DETAILS } from "../actions/watch";
 import { SUCCESS } from "../actions";
 import {
-  SEARCH_LIST_RESPONSE,
-  VIDEO_LIST_RESPONSE,
+  // SEARCH_LIST_RESPONSE,
+  // VIDEO_LIST_RESPONSE,
   CHANNEL_LIST_RESPONSE
 } from "../api/youtube-api-response-types";
 

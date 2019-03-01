@@ -240,7 +240,6 @@ export const getVideoById = (state, videoId) => {
   return state.videos.byId[videoId];
 };
 const getRelatedVideoIds = (state, videoId) => {
-  console.log(state);
   const related = state.videos.related[videoId];
   return related ? related.items : [];
 };

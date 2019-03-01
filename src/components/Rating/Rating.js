@@ -18,7 +18,9 @@ export function Rating(props) {
     // Now that we have calculated the percentage, we bring the numbers into a better readable format
     likeCount = getShortNumberString(amountLikes);
     dislikeCount = getShortNumberString(amountDislikes);
-    rating = <Progress percent={percentagePositiveRatings} size="tiny" />;
+    rating = (
+      <Progress percent={percentagePositiveRatings} color="blue" size="tiny" />
+    );
   }
   return (
     <div className="rating">

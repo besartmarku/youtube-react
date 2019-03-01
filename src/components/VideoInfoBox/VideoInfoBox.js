@@ -60,11 +60,6 @@ export class VideoInfoBox extends React.Component {
       return <div />;
     }
 
-    if (!this.state.collapsed) {
-      descriptionTextClass = "expanded";
-      buttonTitle = "Show Less";
-    }
-
     const descriptionParagraphs = this.getDescriptionParagraphs();
     let { descriptionTextClass, buttonTitle } = this.getConfig();
 
