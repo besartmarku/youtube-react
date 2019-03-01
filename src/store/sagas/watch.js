@@ -26,6 +26,7 @@ export function* fetchWatchDetails(videoId, channelId) {
   try {
     const responses = yield all(requests.map(fn => call(fn)));
     yield put(watchActions.details.success(responses, videoId));
+    yield call(fetchVideoDetails, responses, channelId === null);
   } catch (error) {
     yield put(watchActions.details.failure(error));
   }
