@@ -15,6 +15,9 @@
       grid-row: 1 / 2;
       grid-column: 2 / 3;
     }
+    &.expanded {
+      grid: auto / 246px auto;
+    }
   }
 }
 
@@ -52,6 +55,18 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .view-and-time {
+      margin-bottom: 10px;
+    }
+
+    .semi-bold {
+      &.expanded {
+        font-weight: 400;
+        font-size: 1.3rem;
+      }
+      font-weight: 600;
     }
   }
 
