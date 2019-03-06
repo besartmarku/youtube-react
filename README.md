@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a project I built while learning more about React, Redux and Redux Saga.
+To run the application just install dependencies with "npm install" and then "npm start"
 
 # Features
 This application includes the major features of Youtube such as
