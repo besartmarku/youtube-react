@@ -1,6 +1,7 @@
 import React from "react";
 import { Image } from "semantic-ui-react";
 import "./VideoPreview.scss";
+
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import { getShortNumberString } from "../../services/number/number-format";
@@ -16,13 +17,13 @@ export class VideoPreview extends React.Component {
     if (!video) {
       return <div />;
     }
+
     const duration = video.contentDetails
       ? video.contentDetails.duration
       : null;
     const videoDuration = getVideoDurationString(duration);
     const viewAndTimeString = VideoPreview.getFormattedViewAndTime(video);
     const horizontal = this.props.horizontal ? "horizontal" : null;
-
     const expanded = this.props.expanded ? "expanded" : null;
     const description = this.props.expanded ? video.snippet.description : null;
 
@@ -54,10 +55,15 @@ export class VideoPreview extends React.Component {
       </Link>
     );
   }
+
   static getFormattedViewAndTime(video) {
     const publicationDate = new Date(video.snippet.publishedAt);
-    const viewCountShort = getShortNumberString(video.statistics.viewCount);
-    return `${viewCountShort} views • ${timeAgo.format(publicationDate)}`;
+    const viewCount = video.statistics ? video.statistics.viewCount : null;
+    if (viewCount) {
+      const viewCountShort = getShortNumberString(video.statistics.viewCount);
+      return `${viewCountShort} views • ${timeAgo.format(publicationDate)}`;
+    }
+    return "";
   }
 }
 
