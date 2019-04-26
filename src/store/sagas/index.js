@@ -6,13 +6,15 @@ import {
 } from "./video";
 import { watchWatchDetails } from "./watch";
 import { watchCommentThread } from "./comment";
+import { watchSearchForVideos } from "./search";
 export default function*() {
   yield all([
     fork(watchMostPopularVideos),
     fork(watchVideoCategories),
     fork(watchMostPopularVideosByCategory),
     fork(watchWatchDetails),
-    fork(watchCommentThread)
+    fork(watchCommentThread),
+    fork(watchSearchForVideos)
   ]);
 }
 export function* fetchEntity(request, entity, ...args) {

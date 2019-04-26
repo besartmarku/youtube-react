@@ -3,10 +3,12 @@ import { combineReducers } from "redux";
 import videosReducer from "./videos";
 import channelsReducer from "./channels";
 import commentsReducer from "./comment";
+import searchReducer from "./search";
 
 export default combineReducers({
   api: apiReducer,
   videos: videosReducer,
   channels: channelsReducer,
-  comments: commentsReducer
+  comments: commentsReducer,
+  search: searchReducer
 });
