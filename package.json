@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "javascript-time-ago": "^2.0.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-linkify": "^0.2.2",
